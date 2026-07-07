@@ -1,0 +1,15 @@
+# Lazy.nvim
+lazy-lock.json
+
+# Neovim runtime dirs
+spell/
+shada/
+views/
+
+# Undo files
+*.undodir
+undodir/
+
+# OS
+.DS_Store
+Thumbs.db
