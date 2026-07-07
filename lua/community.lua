@@ -1,12 +1,23 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
-
--- AstroCommunity: import any community modules here
--- We import this file in `lazy_setup.lua` before the `plugins/` folder.
--- This guarantees that the specs are processed before any user plugins.
-
 ---@type LazySpec
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
-  -- import/override with your plugins folder
+
+  -- Colorscheme
+  { import = "astrocommunity.colorscheme.nightfox-nvim" },
+
+  -- Yazi
+  { import = "astrocommunity.file-explorer.yazi-nvim" },
+
+  -- Python Setup
+  { import = "astrocommunity.pack.python.base" },
+  { import = "astrocommunity.pack.python.basedpyright" },
+  { import = "astrocommunity.pack.python.ruff" },
+
+  -- Comments
+  { import = "astrocommunity.comment.mini-comment" },
+
+  -- Markdown
+  { import = "astrocommunity.markdown-and-latex.markdown-preview-nvim" },
+  { import = "astrocommunity.markdown-and-latex.render-markdown-nvim" },
 }
