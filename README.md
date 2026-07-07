@@ -1,6 +1,6 @@
 # Neovim Config
 
-AstroNvim v6 configuration with Python development focus.
+My personal AstroNvim v6 configuration.
 
 ## Plugins
 
@@ -68,6 +68,6 @@ Leader key: `Space`
 ## Install
 
 ```shell
-git clone https://github.com/<user>/<repo> ~/.config/nvim
+git clone https://github.com/vaproh/nvim.git ~/.config/nvim
 nvim
 ```
