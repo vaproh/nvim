@@ -53,10 +53,27 @@ return {
           command = "silent! checktime",
         },
       },
+      c_indent = {
+        {
+          event = "FileType",
+          pattern = { "c", "cpp", "h", "hpp", "objc", "objcpp" },
+          desc = "Use 4-space indent for C/C++",
+          callback = function()
+            vim.opt_local.tabstop = 4
+            vim.opt_local.softtabstop = 4
+            vim.opt_local.shiftwidth = 4
+            vim.opt_local.expandtab = true
+          end,
+        },
+      },
     },
 
     mappings = {
       n = {
+        -- which-key group names
+        ["<Leader>s"] = { desc = " Split/Window" },
+        ["<Leader>Y"] = { desc = " Yazi" },
+        ["Y"] = { "y$", desc = "Yank to end of line" },
         -- buffer navigation
         ["]b"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["[b"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
@@ -112,7 +129,11 @@ return {
         ["<"] = { "<gv", desc = "Indent left" },
         [">"] = { ">gv", desc = "Indent right" },
         ["<C-/>"] = {
-          function() require("mini.comment").toggle_lines(vim.fn.line "v", vim.fn.line ".") end,
+          function()
+            local s, e = vim.fn.line "v", vim.fn.line "."
+            if s > e then s, e = e, s end
+            require("mini.comment").toggle_lines(s, e)
+          end,
           desc = "Toggle comment",
         },
       },

@@ -31,5 +31,14 @@ return {
       LSPLoading9 = "⠇",
       LSPLoading10 = "⠏",
     },
+    status = {
+      components = {
+        file_info = {
+          filename = { padding = { right = 1 } },
+          unique_path = {},
+          filetype = false,
+        },
+      },
+    },
   },
 }
